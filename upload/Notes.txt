@@ -1,0 +1,5 @@
+Parascan
+03/2010 - 11/2010
+Tech lead, Developer
+Parascan is a part of next-gen enterprise security offering from nCircle. We've automated creation of the openvpn tunnel from VM on the cloud to the client and alow IP360 scanner to scan client's network
+Python, ZeroMQ, iptables, openvpn 

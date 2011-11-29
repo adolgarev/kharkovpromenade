@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+	<dict>
+		<key>data</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>Адресация памяти</string>
+				<key>src</key>
+				<string>1.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Адреса памяти в защищенном режиме</string>
+				<key>src</key>
+				<string>2.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Преобразование логического адреса</string>
+				<key>src</key>
+				<string>3.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Сегментация в Linux</string>
+				<key>src</key>
+				<string>4.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Сегментация в Linux 2</string>
+				<key>src</key>
+				<string>5.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Обычное управление страницами</string>
+				<key>src</key>
+				<string>6.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Управление страницами в 64-разрядных архитектурах</string>
+				<key>src</key>
+				<string>7.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Преимущества страничной организации памяти</string>
+				<key>src</key>
+				<string>8.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Аппаратный кеш</string>
+				<key>src</key>
+				<string>9.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Буферы быстрого преобразования адреса (TLB)</string>
+				<key>src</key>
+				<string>10.png</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
