@@ -20,9 +20,10 @@ package test {
 
 			_text.autoSize = TextFieldAutoSize.LEFT;
 			var tf:TextFormat = _text.defaultTextFormat;
-			tf.size = 19;
-			tf.font = "Lucida Grande";
-			_text.embedFonts = true;
+			tf.size = 21;
+			tf.font = "Times New Roman";
+			tf.bold = true;
+			//_text.embedFonts = true;
 			_text.defaultTextFormat = tf;
 			_text.setTextFormat(tf);
 			_text.antiAliasType = AntiAliasType.ADVANCED;
@@ -34,7 +35,7 @@ package test {
 			graphics.moveTo(3, 10);
 			graphics.lineTo(3, 45);
 			graphics.lineStyle(1, 0xCCCCCC, 1.0, true, LineScaleMode.NORMAL, CapsStyle.NONE);
-			graphics.lineTo(642, 45);
+			graphics.lineTo(619, 45);
 		}
 
 		public function get text():String {

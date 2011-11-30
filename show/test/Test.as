@@ -52,24 +52,25 @@ package test {
 			else
 				_path = _path.substring(0, l + 1);
 
-			var fontLoader:Loader = new Loader();
+			stage3();
+			/*var fontLoader:Loader = new Loader();
 			fontLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, stage3);
-			fontLoader.load(new URLRequest("Lucida Grande.swf"));
+			fontLoader.load(new URLRequest("Lucida Grande.swf"));*/
 		}
 
 
-		private function stage3(e:Event):void {
+		private function stage3(e:Event = null):void {
 			_main = new Main(_data, _path);
 			addChild(_main);
+			_main.postAdd();
 			stage.addEventListener(Event.RESIZE, layoutElements);
 			layoutElements();
 		}
 
 
 		private function layoutElements(e:Event = null):void {
-			_main.x = (stage.stageWidth - 800) / 2;
+			_main.x = (stage.stageWidth - 624) / 2;
 			_main.y = 0;
-			_main.layoutElements();
 		}
 	}
 }

@@ -9,6 +9,8 @@ package test {
 	import flash.events.MouseEvent;
 	import flash.net.URLRequest;
 	import flash.display.Loader;
+	import flash.display.CapsStyle;
+	import flash.display.LineScaleMode;
 
 	import test.LinkField;
 	import test.NameField;
@@ -19,6 +21,7 @@ package test {
 		private var _prev:LinkField;
 		private var _name:NameField;
 		private var _num:TextField;
+		private var _hr:Sprite;
 
 
 		private var _loader:Loader;
@@ -42,8 +45,8 @@ package test {
 			_num.autoSize = TextFieldAutoSize.LEFT;
 			var tf:TextFormat = _num.defaultTextFormat;
 			tf.size = 14;
-			tf.font = "Lucida Grande";
-			_num.embedFonts = true;
+			tf.font = "Times New Roman";
+			//_num.embedFonts = true;
 			_num.defaultTextFormat = tf;
 			_num.setTextFormat(tf);
 			_num.antiAliasType = AntiAliasType.ADVANCED;
@@ -60,8 +63,17 @@ package test {
 			_prev.addEventListener(MouseEvent.CLICK, handlePrev);
 			addChild(_prev);
 
-			//stage.addEventListener(Event.RESIZE, layoutElements);
+			_hr = new Sprite();
+			_hr.graphics.lineStyle(1, 0x888888, 1.0, true, LineScaleMode.NORMAL, CapsStyle.NONE);
+			_hr.graphics.moveTo(3, 0);
+			_hr.graphics.lineTo(619, 0);
+			addChild(_hr);
+		}
+
+		public function postAdd():void {
+			stage.addEventListener(Event.RESIZE, layoutElements);
 			showElement(0);
+			layoutElements();
 		}
 
 
@@ -92,7 +104,7 @@ package test {
 		}
 
 		public function layoutElements(e:Event = null):void {
-			_next.x = 800 - _next.width;
+			_next.x = 624 - _next.width;
 			_prev.x = _next.x - _prev.width - 2;
 			_next.y = stage.stageHeight - _next.height - 5;
 			_prev.y = stage.stageHeight - _prev.height - 5;
@@ -100,12 +112,14 @@ package test {
 			_num.x = 0;
 			_num.y = stage.stageHeight - _num.height - 5;
 
+			_hr.x = 0;
+			_hr.y = _next.y - 3;
 
 			if (_loader.contentLoaderInfo.content != null) {
 				var max_available_width:int = stage.stageWidth;
-				var max_available_height:int = _num.y - _name.y - _name.height - 5;
+				var max_available_height:int = 600;
 				_loader.x = (max_available_width - _loader.contentLoaderInfo.width) / 2 - x;
-				_loader.y = (max_available_height - _loader.contentLoaderInfo.height) / 2 + _name.y + _name.height + 5 - y;
+				_loader.y = (max_available_height - _loader.contentLoaderInfo.height) / 2 + _name.y + _name.height - y;
 			}
 		}
 	}

@@ -24,8 +24,8 @@ package test {
 			tf.underline = false;
 			tf.color = 0x0000ff;
 			tf.size = 14;
-			tf.font = "Lucida Grande";
-			_text.embedFonts = true;
+			tf.font = "Times New Roman";
+			//_text.embedFonts = true;
 			_text.defaultTextFormat = tf;
 			_text.setTextFormat(tf);
 			_text.antiAliasType = AntiAliasType.ADVANCED;
