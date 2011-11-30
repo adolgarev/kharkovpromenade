@@ -113,7 +113,7 @@ package test {
 			_num.y = stage.stageHeight - _num.height - 5;
 
 			_hr.x = 0;
-			_hr.y = _next.y - 3;
+			_hr.y = _next.y - 5;
 
 			if (_loader.contentLoaderInfo.content != null) {
 				var max_available_width:int = stage.stageWidth;
