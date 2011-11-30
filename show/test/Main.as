@@ -14,6 +14,7 @@ package test {
 
 	import test.LinkField;
 	import test.NameField;
+	import test.Info;
 
 	public class Main extends Sprite {
 
@@ -28,7 +29,10 @@ package test {
 
 		private var _data:Object;
 		private var _path:String;
-		private var _pos:uint;
+		private var _pos:int;
+
+
+		private var _info:Info;
 
 
 		public function Main(data:Object, path:String) {
@@ -68,11 +72,14 @@ package test {
 			_hr.graphics.moveTo(3, 0);
 			_hr.graphics.lineTo(619, 0);
 			addChild(_hr);
+
+			_info = new Info(_data);
+			addChild(_info);
 		}
 
 		public function postAdd():void {
 			stage.addEventListener(Event.RESIZE, layoutElements);
-			showElement(0);
+			showElement(-1);
 			layoutElements();
 		}
 
@@ -86,21 +93,33 @@ package test {
 		}
 
 
-		private function showElement(i:uint):void {
+		private function showElement(i:int):void {
 			_pos = i;
 
-			_loader.load(new URLRequest(_path + _data.data[i].src));
-			_loader.contentLoaderInfo.addEventListener(Event.COMPLETE, layoutElements);
-
-			_next.visible = true;
-			_prev.visible = true;
-			if (i == 0)
+			if (i == -1) {
+				_info.visible = true;
+				_next.visible = true;
 				_prev.visible = false;
-			if (i >= _data.data.length - 1)
-				_next.visible = false;
 
-			_name.text = _data.data[i].name;
-			_num.text = String(i + 1) + "/" + String(_data.data.length);
+				_loader.unload();
+
+				_name.text = _data.name;
+			}
+			else {
+				_info.visible = false;
+
+				_loader.load(new URLRequest(_path + _data.data[i].src));
+				_loader.contentLoaderInfo.addEventListener(Event.COMPLETE, layoutElements);
+
+				_next.visible = true;
+				_prev.visible = true;
+				if (i >= _data.data.length - 1)
+					_next.visible = false;
+
+				_name.text = _data.data[i].name;
+			}
+			_num.text = String(i+1) + "/" + String(_data.data.length);
+
 		}
 
 		public function layoutElements(e:Event = null):void {
@@ -115,11 +134,15 @@ package test {
 			_hr.x = 0;
 			_hr.y = _next.y - 5;
 
+			_info.x = 624 - _info.width - 5;
+			_info.y = _name.y + _name.height + 7;
+
+
 			if (_loader.contentLoaderInfo.content != null) {
 				var max_available_width:int = stage.stageWidth;
 				var max_available_height:int = 600;
 				_loader.x = (max_available_width - _loader.contentLoaderInfo.width) / 2 - x;
-				_loader.y = (max_available_height - _loader.contentLoaderInfo.height) / 2 + _name.y + _name.height - y;
+				_loader.y = (max_available_height - _loader.contentLoaderInfo.height) / 2 + _name.y + _name.height;
 			}
 		}
 	}
