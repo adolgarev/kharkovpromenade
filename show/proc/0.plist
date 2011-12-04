@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+	<dict>
+		<key>name</key>
+		<string>Процессы</string>
+		<key>creationDate</key>
+		<string>2011/12/04 15:25</string>
+		<key>modificationDate</key>
+		<string>2011/12/04 15:25</string>
+		<key>owner</key>
+		<string>aleksandr.dolgarev</string>
+		<key>data</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>Процессы и облегченные процессы</string>
+				<key>src</key>
+				<string>1.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Дескриптор процесса</string>
+				<key>src</key>
+				<string>2.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Состояния процесса</string>
+				<key>src</key>
+				<string>3.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Идентификация текущего процесса</string>
+				<key>src</key>
+				<string>4.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Организация процессов</string>
+				<key>src</key>
+				<string>5.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>PID, TGID, PGID, SID</string>
+				<key>src</key>
+				<string>6.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Взаимоотношения между процессами</string>
+				<key>src</key>
+				<string>7.png</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
