@@ -53,6 +53,30 @@
 				<key>src</key>
 				<string>7.png</string>
 			</dict>
+			<dict>
+				<key>name</key>
+				<string>Ограничения на ресурсы</string>
+				<key>src</key>
+				<string>8.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Переключение процессов</string>
+				<key>src</key>
+				<string>9.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Создание процесса</string>
+				<key>src</key>
+				<string>10.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Уничтожение процесса</string>
+				<key>src</key>
+				<string>11.png</string>
+			</dict>
 		</array>
 	</dict>
 </plist>
