@@ -11,10 +11,14 @@ package test {
 	import flash.display.Loader;
 	import flash.display.CapsStyle;
 	import flash.display.LineScaleMode;
+	import flash.media.Sound;
+	import flash.media.SoundChannel;
+	import flash.geom.Rectangle;
 
 	import test.LinkField;
 	import test.NameField;
 	import test.Info;
+	import test.PosSprite;
 
 	public class Main extends Sprite {
 
@@ -33,6 +37,15 @@ package test {
 
 
 		private var _info:Info;
+
+		private var _play:LinkField = null;
+		private var _sound:Sound = null;
+		private var _channel:SoundChannel = null;
+		private var _position:int;
+		private var _playing:Boolean;
+		private var _posSprite:PosSprite;
+		private var _dragging:Boolean;
+		private var _realPos:int;
 
 
 		public function Main(data:Object, path:String) {
@@ -69,9 +82,29 @@ package test {
 
 			_hr = new Sprite();
 			_hr.graphics.lineStyle(1, 0x888888, 1.0, true, LineScaleMode.NORMAL, CapsStyle.NONE);
-			_hr.graphics.moveTo(3, 0);
-			_hr.graphics.lineTo(619, 0);
+			_hr.graphics.moveTo(0, 0);
+			_hr.graphics.lineTo(616, 0);
 			addChild(_hr);
+
+			if (_data.hasOwnProperty("audio")) {
+				_play = new LinkField();
+				_play.text = "Play";
+				_play.addEventListener(MouseEvent.CLICK, handlePlay);
+				addChild(_play);
+
+				_sound = new Sound();
+				_sound.load(new URLRequest(_path + _data.audio));
+				_position = 0;
+				_realPos = -1;
+				_playing = false;
+
+				_posSprite = new PosSprite();
+				addChild(_posSprite);
+				addEventListener(Event.ENTER_FRAME, posSprite);
+
+				_posSprite.addEventListener(MouseEvent.MOUSE_DOWN, posStartDrag);
+				_dragging = false;
+			}
 
 			_info = new Info(_data);
 			addChild(_info);
@@ -92,6 +125,66 @@ package test {
 			showElement(_pos - 1);
 		}
 
+		private function handlePlay(e:Event = null):void {
+			if (_playing) {
+				if (_channel != null) {
+					_channel.stop();
+					_playing = false;
+					_play.text = "Play";
+				}
+			}
+			else {
+				_channel = _sound.play(_position);
+				_playing = true;
+				_play.text = "Pause";
+			}
+		}
+
+		private function posSprite(e:Event = null):void {
+			if (_sound == null)
+				return;
+
+			if (_dragging)
+				_position = (_posSprite.x - _hr.x) / _hr.width * _sound.length;
+			else if (_playing)
+				_position = _channel.position;
+
+			if (!_dragging) {
+				_posSprite.x = _hr.x + _hr.width * (_position / _sound.length);
+				_posSprite.y = _hr.y;
+			}
+
+			if (_playing || _dragging) {
+				var realPos:int = 0;
+				for (realPos = 0; realPos < _data.cuePoints.length; realPos++) {
+					if (_data.cuePoints[realPos] > _position / 1000)
+						break;
+				}
+				realPos--;
+				if (realPos != _realPos) {
+					_realPos = realPos;
+					showElement(realPos);
+				}
+			}
+		}
+
+		private function posStartDrag(event:MouseEvent):void {
+			_posSprite.startDrag(false, new Rectangle(_hr.x, _hr.y, _hr.width, 0));
+			stage.addEventListener(MouseEvent.MOUSE_UP, posStopDrag);
+			_dragging = true;
+			_channel.stop();
+		}
+
+		private function posStopDrag(event:MouseEvent):void {
+			_posSprite.stopDrag();
+			stage.removeEventListener(MouseEvent.MOUSE_UP, posStopDrag);
+			_dragging = false;
+
+			if (_playing)
+				_channel = _sound.play(_position);
+			else
+				_channel = null;
+		}
 
 		private function showElement(i:int):void {
 			_pos = i;
@@ -126,16 +219,21 @@ package test {
 			_next.x = 624 - _next.width;
 			_prev.x = _next.x - _prev.width - 2;
 			_next.y = stage.stageHeight - _next.height - 5;
-			_prev.y = stage.stageHeight - _prev.height - 5;
+			_prev.y = _next.y;
 
 			_num.x = 0;
 			_num.y = stage.stageHeight - _num.height - 5;
 
-			_hr.x = 0;
+			_hr.x = 3;
 			_hr.y = _next.y - 5;
 
 			_info.x = 624 - _info.width - 5;
 			_info.y = _name.y + _name.height + 7;
+
+			if (_sound != null) {
+				_play.x = 624 - 120;
+				_play.y = _next.y;
+			}
 
 
 			if (_loader.contentLoaderInfo.content != null) {

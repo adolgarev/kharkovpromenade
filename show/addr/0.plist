@@ -9,6 +9,20 @@
 		<string>2011/11/24 15:50</string>
 		<key>owner</key>
 		<string>aleksandr.dolgarev</string>
+		<key>audio</key>
+		<string>audio.mp3</string>
+		<key>cuePoints</key>
+		<array>
+			<integer>294</integer>
+			<integer>588</integer>
+			<integer>882</integer>
+			<integer>1176</integer>
+			<integer>1471</integer>
+			<integer>1765</integer>
+			<integer>2059</integer>
+			<integer>2353</integer>
+			<integer>2647</integer>
+		</array>
 		<key>data</key>
 		<array>
 			<dict>
