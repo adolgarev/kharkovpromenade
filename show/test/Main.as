@@ -144,6 +144,9 @@ package test {
 			if (_sound == null)
 				return;
 
+			var length:Number;
+			length = _sound.length * _sound.bytesTotal / _sound.bytesLoaded;
+
 			if (_dragging)
 				_position = (_posSprite.x - _hr.x) / _hr.width * _sound.length;
 			else if (_playing)
