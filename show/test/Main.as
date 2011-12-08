@@ -148,12 +148,12 @@ package test {
 			length = _sound.length * _sound.bytesTotal / _sound.bytesLoaded;
 
 			if (_dragging)
-				_position = (_posSprite.x - _hr.x) / _hr.width * _sound.length;
+				_position = (_posSprite.x - _hr.x) / _hr.width * length;
 			else if (_playing)
 				_position = _channel.position;
 
 			if (!_dragging) {
-				_posSprite.x = _hr.x + _hr.width * (_position / _sound.length);
+				_posSprite.x = _hr.x + _hr.width * (_position / length);
 				_posSprite.y = _hr.y;
 			}
 
