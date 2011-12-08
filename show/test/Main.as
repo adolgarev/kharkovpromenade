@@ -39,7 +39,6 @@ package test {
 		private var _info:Info;
 
 		private var _play:LinkField = null;
-		private var _pause:LinkField = null;
 		private var _sound:Sound = null;
 		private var _channel:SoundChannel = null;
 		private var _position:int;
@@ -90,22 +89,14 @@ package test {
 			if (_data.hasOwnProperty("audio")) {
 				_play = new LinkField();
 				_play.text = "Play";
-				_play.visible = false;
 				_play.addEventListener(MouseEvent.CLICK, handlePlay);
 				addChild(_play);
-
-				_pause = new LinkField();
-				_pause.text = "Pause";
-				_pause.visible = false;
-				_pause.addEventListener(MouseEvent.CLICK, handlePause);
-				addChild(_pause);
 
 				_sound = new Sound();
 				_sound.load(new URLRequest(_path + _data.audio));
 				_position = 0;
 				_realPos = -1;
 				_playing = false;
-				_play.visible = true;
 
 				_posSprite = new PosSprite();
 				addChild(_posSprite);
@@ -128,27 +119,24 @@ package test {
 
 		private function handleNext(e:Event = null):void {
 			showElement(_pos + 1);
-			//handlePause();
 		}
 
 		private function handlePrev(e:Event = null):void {
 			showElement(_pos - 1);
-			//handlePause();
 		}
 
 		private function handlePlay(e:Event = null):void {
-			_channel = _sound.play(_position);
-			_playing = true;
-			_play.visible = false;
-			_pause.visible = true;
-		}
-
-		private function handlePause(e:Event = null):void {
-			if (_channel != null) {
-				_channel.stop();
-				_playing = false;
-				_play.visible = true;
-				_pause.visible = false;
+			if (_playing) {
+				if (_channel != null) {
+					_channel.stop();
+					_playing = false;
+					_play.text = "Play";
+				}
+			}
+			else {
+				_channel = _sound.play(_position);
+				_playing = true;
+				_play.text = "Pause";
 			}
 		}
 
@@ -243,10 +231,8 @@ package test {
 			_info.y = _name.y + _name.height + 7;
 
 			if (_sound != null) {
-				_play.x = (624 - _play.width - _pause.width - 2) / 2;
+				_play.x = 624 - 120;
 				_play.y = _next.y;
-				_pause.x = _play.x + _play.width + 2;
-				_pause.y = _next.y;
 			}
 
 
