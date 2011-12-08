@@ -46,6 +46,7 @@ package test {
 		private var _playing:Boolean;
 		private var _posSprite:PosSprite;
 		private var _dragging:Boolean;
+		private var _realPos:int;
 
 
 		public function Main(data:Object, path:String) {
@@ -102,6 +103,7 @@ package test {
 				_sound = new Sound();
 				_sound.load(new URLRequest(_path + _data.audio));
 				_position = 0;
+				_realPos = -1;
 				_playing = false;
 				_play.visible = true;
 
@@ -126,12 +128,12 @@ package test {
 
 		private function handleNext(e:Event = null):void {
 			showElement(_pos + 1);
-			handlePause();
+			//handlePause();
 		}
 
 		private function handlePrev(e:Event = null):void {
 			showElement(_pos - 1);
-			handlePause();
+			//handlePause();
 		}
 
 		private function handlePlay(e:Event = null):void {
@@ -171,8 +173,10 @@ package test {
 						break;
 				}
 				realPos--;
-				if (realPos != _pos)
+				if (realPos != _realPos) {
+					_realPos = realPos;
 					showElement(realPos);
+				}
 			}
 		}
 
