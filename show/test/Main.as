@@ -81,10 +81,14 @@ package test {
 			addChild(_prev);
 
 			_hr = new Sprite();
+			_hr.graphics.beginFill(0xFF0000, 0.0);
+			_hr.graphics.drawRect(0, -5, 616, 10);
+			_hr.graphics.endFill();
 			_hr.graphics.lineStyle(1, 0x888888, 1.0, true, LineScaleMode.NORMAL, CapsStyle.NONE);
 			_hr.graphics.moveTo(0, 0);
 			_hr.graphics.lineTo(616, 0);
 			addChild(_hr);
+			_hr.addEventListener(MouseEvent.CLICK, handleSetPos);
 
 			if (_data.hasOwnProperty("audio")) {
 				_play = new LinkField();
@@ -140,9 +144,30 @@ package test {
 			}
 		}
 
+
+		private function handleSetPos(e:MouseEvent):void {
+			if (_sound == null)
+				return;
+
+			var length:Number;
+			length = _sound.length * _sound.bytesTotal / _sound.bytesLoaded;
+			_position = length / _hr.width * e.localX;
+
+
+			if (_playing) {
+				_channel.stop();
+				_channel = _sound.play(_position);
+			}
+		}
+
 		private function posSprite(e:Event = null):void {
 			if (_sound == null)
 				return;
+
+			_hr.graphics.lineStyle(1, 0x000000, 1.0, true, LineScaleMode.NORMAL, CapsStyle.NONE);
+			_hr.graphics.moveTo(0, 0);
+			_hr.graphics.lineTo(616 * _sound.bytesLoaded / _sound.bytesTotal, 0);
+
 
 			var length:Number;
 			length = _sound.length * _sound.bytesTotal / _sound.bytesLoaded;
@@ -157,7 +182,7 @@ package test {
 				_posSprite.y = _hr.y;
 			}
 
-			if (_playing || _dragging) {
+			if (_data.hasOwnProperty("cuePoints") && (_playing || _dragging)) {
 				var realPos:int = 0;
 				for (realPos = 0; realPos < _data.cuePoints.length; realPos++) {
 					if (_data.cuePoints[realPos] > _position / 1000)
@@ -185,8 +210,6 @@ package test {
 
 			if (_playing)
 				_channel = _sound.play(_position);
-			else
-				_channel = null;
 		}
 
 		private function showElement(i:int):void {
