@@ -43,6 +43,30 @@
 				<key>src</key>
 				<string>5.png</string>
 			</dict>
+			<dict>
+				<key>name</key>
+				<string>Балансирование очередей</string>
+				<key>src</key>
+				<string>6.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Области планирования</string>
+				<key>src</key>
+				<string>7.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Системные вызовы, относящиеся к планированию</string>
+				<key>src</key>
+				<string>8.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Системные вызовы, относящиеся к процессам реального времени</string>
+				<key>src</key>
+				<string>9.png</string>
+			</dict>
 		</array>
 	</dict>
 </plist>
