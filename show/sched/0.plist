@@ -9,8 +9,8 @@
 		<string>2011/12/18 15:57</string>
 		<key>owner</key>
 		<string>aleksandr.dolgarev</string>
-		<!-- <key>audio</key>
-		<string>audio.mp3</string> -->
+		<key>audio</key>
+		<string>audio.mp3</string>
 		<key>data</key>
 		<array>
 			<dict>
