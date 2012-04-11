@@ -43,7 +43,8 @@ div#frame {
   vertical-align: top;
 }
 div#main {
-  width: 85ex;
+  /*width: 85ex;*/
+  width: 550px;
   margin: 0ex;
   padding: 1ex;
   float: left;
