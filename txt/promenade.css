@@ -43,12 +43,17 @@ div#frame {
   vertical-align: top;
 }
 div#main {
-  /*width: 85ex;*/
-  width: 550px;
+  width: 85ex;
   margin: 0ex;
   padding: 1ex;
   float: left;
   text-align: left;
+}
+@media screen and (max-device-width:960px) {
+div#main {
+  width: 95%;
+  font-size: 200%;
+}
 }
 div.logo {
   margin: 2ex 0ex 1ex 0ex;
