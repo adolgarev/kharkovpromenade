@@ -49,6 +49,12 @@ div#main {
   float: left;
   text-align: left;
 }
+@media screen and (max-device-width:960px) {
+div#main {
+  width: 95%;
+  font-size: 200%;
+}
+}
 div.logo {
   margin: 2ex 0ex 1ex 0ex;
 }
