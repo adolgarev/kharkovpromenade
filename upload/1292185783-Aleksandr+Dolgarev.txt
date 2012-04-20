@@ -49,10 +49,10 @@ Mountain View, CA 94041
 
 
 Hotsite
-11/2010 - to date (06/2011)
+11/2010 - to date (04/2012)
 Developer
 *Confidential*
-Python 2.6, sqlalchemy 0.6, MySQL 5.1, Xen opensource, Open vSwitch, Juniper SSL VPN, Coraid
+C99, Python 2.6, sqlalchemy 0.6, MySQL 5.1, Xen opensource, Open vSwitch, Juniper SSL VPN, Coraid
 
 
 Pure Cloud
