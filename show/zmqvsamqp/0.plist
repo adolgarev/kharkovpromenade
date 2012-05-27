@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+	<dict>
+		<key>name</key>
+		<string>Сравнение AMQP и ZeroMQ</string>
+		<key>creationDate</key>
+		<string>2012/05/27 12:00</string>
+		<key>modificationDate</key>
+		<string>2012/05/27 12:00</string>
+		<key>owner</key>
+		<string>aleksandr.dolgarev</string>
+		<key>data</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>О чем</string>
+				<key>src</key>
+				<string>img1.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Зачем это нужно и когда это не нужно</string>
+				<key>src</key>
+				<string>img2.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>RabbitMQ Hellow world</string>
+				<key>src</key>
+				<string>img3.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>RabbitMQ Hellow world</string>
+				<key>src</key>
+				<string>img4.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>RabbitMQ Hellow world</string>
+				<key>src</key>
+				<string>img5.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Zmq: под капотом</string>
+				<key>src</key>
+				<string>img6.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Zmq Hellow world</string>
+				<key>src</key>
+				<string>img7.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Zmq типы сокетов: REQ, REP</string>
+				<key>src</key>
+				<string>img8.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Zmq типы сокетов: DEALER, ROUTER</string>
+				<key>src</key>
+				<string>img9.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Займемся делом: задача из жизни</string>
+				<key>src</key>
+				<string>img10.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Делаем: добавим брокер</string>
+				<key>src</key>
+				<string>img11.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Делаем на RabbitMQ: вид сверху</string>
+				<key>src</key>
+				<string>img12.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Делаем на Zmq: вид сбоку</string>
+				<key>src</key>
+				<string>img13.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Делаем на Zmq: отправка и получение сообщений</string>
+				<key>src</key>
+				<string>img14.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Делаем на Zmq: LB</string>
+				<key>src</key>
+				<string>img15.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Делаем на Zmq: HA (это не LB!)</string>
+				<key>src</key>
+				<string>img16.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Делаем на Zmq: HA (это не LB!)</string>
+				<key>src</key>
+				<string>img17.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Из опыта: RabbitMQ - недостатки</string>
+				<key>src</key>
+				<string>img18.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Из опыта: Zmq - недостатки</string>
+				<key>src</key>
+				<string>img19.png</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Вывод</string>
+				<key>src</key>
+				<string>img20.png</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
