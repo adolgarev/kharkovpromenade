@@ -109,7 +109,7 @@
 			</dict>
 			<dict>
 				<key>name</key>
-				<string>Делаем на Zmq: HA (это не LB!)</string>
+				<string>Делаем на Zmq: persistence и история</string>
 				<key>src</key>
 				<string>img17.png</string>
 			</dict>
