@@ -64,7 +64,7 @@ C99 (epoll, aio, other system programming), XFS, CORAID, LVM2
 
 Hotsite
 11/2010 - 04/2012
-Developer
+Tech lead, Developer
 *Confidential*
 C99, Python 2.6, sqlalchemy 0.6, MySQL 5.1, Xen opensource, Open vSwitch, Juniper SSL VPN, CORAID
 
