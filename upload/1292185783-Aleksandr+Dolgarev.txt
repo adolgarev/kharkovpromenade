@@ -48,11 +48,25 @@ Mountain View, CA 94041
 01/2011 – to date
 
 
+NAS acceleration project
+06/2012
+Tech lead, Developer
+Implemented FUSE driver to cache metadata (statbufs and file lists) of underlying NFS filesystem (from HP IBRIX) in a Key-Value db. This solution dramatically speeds up syncing of client's data with NAS storage in datacenter.
+C99, Kyoto Cabinet, FUSE
+
+
+Datacenter storage implementation on SAN
+04/2012 - 05/2012
+Tech lead, Developer
+Implemented Key-Value storage on top of many XFS filesystems keeped on SAN from CORAID. The storage was designed to handle 72000/sec get and 3000/sec put requests and to handle 2PB of data.
+C99 (epoll, aio, other system programming), XFS, CORAID, LVM2
+
+
 Hotsite
-11/2010 - to date (04/2012)
+11/2010 - 04/2012
 Developer
 *Confidential*
-C99, Python 2.6, sqlalchemy 0.6, MySQL 5.1, Xen opensource, Open vSwitch, Juniper SSL VPN, Coraid
+C99, Python 2.6, sqlalchemy 0.6, MySQL 5.1, Xen opensource, Open vSwitch, Juniper SSL VPN, CORAID
 
 
 Pure Cloud
