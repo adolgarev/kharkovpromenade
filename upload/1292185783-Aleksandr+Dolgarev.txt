@@ -48,8 +48,15 @@ Mountain View, CA 94041
 01/2011 – to date
 
 
-NAS acceleration project
-06/2012
+Riak and Cassandra evaluation
+08/2012
+Tech lead
+A set of test were implemented and performed to load Riak and Cassandra and push them to limits on 10-node cluster. For Riak LevelDB and Bitcask backends were tested.
+C99, Python, Riak 1.2, Cassandra 1.1.2
+
+
+NAS acceleration
+06/2012 -07/2012
 Tech lead, Developer
 Implemented FUSE driver to cache metadata (statbufs and file lists) of underlying NFS filesystem (from HP IBRIX) in a Key-Value db. This solution dramatically speeds up syncing of client's data with NAS storage in datacenter.
 C99, Kyoto Cabinet, FUSE
